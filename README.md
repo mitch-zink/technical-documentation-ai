@@ -1,5 +1,8 @@
 # Technical Documentation AI
 
+## Description
+I can answer technical questions in real time by checking documentation for AWS, GitHub, Fivetran, Looker, dbt, Prefect, & Snowflake.
+
 ## User Question Processing Workflow
 
 To effectively handle a user’s question, the system performs the following steps:
@@ -54,3 +57,4 @@ python3.9 -m venv venv && .\venv\Scripts\activate && python -m pip install --upg
 
 ## Sample Q&A
 ![example](example.png)
+

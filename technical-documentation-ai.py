@@ -68,7 +68,7 @@ class PrintRetrievalHandler(BaseCallbackHandler):
 
 
 st.header("`Technical Documentation AI Chat Bot`")
-st.info("`I can answer technical questions in real time by checking documentation for Looker, dbt, Prefect, AWS, Snowflake, and Docker`")
+st.info("`I can answer technical questions in real time by checking documentation for AWS, GitHub, Fivetran, Looker, dbt, Prefect, & Snowflake.`")
 
 # Make retriever and llm
 if 'retriever' not in st.session_state:
