@@ -55,7 +55,7 @@ os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
   
 - **`OPENAI_API_KEY`**: Retrieve from [OpenAI API Keys](https://beta.openai.com/account/api-keys).
 
-## 👷 Setup & Run for Mac OS
+## 👷 Setup & Run for MacOS
 ```
 python3.9 -m venv venv && source venv/bin/activate && pip3 install --upgrade pip && pip3 install -r requirements.txt && streamlit run technical-documentation-ai.py
 ```
