@@ -4,10 +4,6 @@ from langchain.callbacks.base import BaseCallbackHandler
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.retrievers.web_research import WebResearchRetriever
 import os
-import streamlit as st
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.chains import RetrievalQAWithSourcesChain
-from langchain.retrievers.web_research import WebResearchRetriever
 import logging
 
 def setup_logging():
