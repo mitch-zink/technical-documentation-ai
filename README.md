@@ -5,7 +5,7 @@
 [![OpenAI](https://img.shields.io/badge/-OpenAI-412991?style=flat-square&logo=openai&logoColor=white)](https://openai.com/)
 [![Langchain](https://img.shields.io/badge/-Langchain-gray?style=flat-square)](https://www.langchain.com/)
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://technical-documentation-ai-g-efxnappvkcu9kyyaksqvpwl.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://technical-documentation-ai.streamlit.app/)
 
 ## ✨ Description
 A powerful AI chatbot capable of providing real-time answers to technical questions by accessing documentation from various tools and services.
