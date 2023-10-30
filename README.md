@@ -10,6 +10,9 @@
 ## ✨ Description
 The AI chatbot can answer technical questions in real time by checking documentation for AWS, GitHub, Fivetran, Looker, dbt, Prefect, & Snowflake.
 
+## 🙋‍♂️ Sample Q&A
+![example](example.png)
+
 ## 🙋‍♂️ User Question Processing Workflow
 
 To effectively handle a user’s question, the system performs the following steps:
@@ -61,6 +64,3 @@ python3.9 -m venv venv && source venv/bin/activate && pip3 install --upgrade pip
 ```
 python3.9 -m venv venv && .\venv\Scripts\activate && python -m pip install --upgrade pip && pip install -r requirements.txt && streamlit run technical-documentation-ai.py
 ```
-
-## 🙋‍♂️ Sample Q&A
-![example](example.png)
