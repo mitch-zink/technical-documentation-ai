@@ -8,9 +8,23 @@
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://technical-documentation-ai-g-efxnappvkcu9kyyaksqvpwl.streamlit.app/)
 
 ## ✨ Description
-The AI chatbot can answer technical questions in real time by checking documentation for AWS, GitHub, Fivetran, Looker, dbt, Prefect, & Snowflake.
+A powerful AI chatbot capable of providing real-time answers to technical questions by accessing documentation from various tools and services.
+
+## 📚 Supported Documentation
+1. **AWS**: [docs.aws.amazon.com](https://docs.aws.amazon.com)
+2. **dbt**: [dbt-labs.github.io/dbt-project-evaluator](https://dbt-labs.github.io/dbt-project-evaluator), [getdbt.com](https://getdbt.com)
+3. **Fivetran**: [fivetran.com](https://fivetran.com)
+4. **Looker**: [cloud.google.com/looker/docs](https://cloud.google.com/looker/docs)
+5. **Prefect**: [docs.prefect.io](https://docs.prefect.io)
+6. **Python (Langchain)**: [python.langchain.com/docs](https://python.langchain.com/docs)
+7. **Snowflake**: [docs.snowflake.com](https://docs.snowflake.com)
+8. **Streamlit**: [docs.streamlit.io](https://docs.streamlit.io)
+
+## 🤖 How to Use
+Interact with the chatbot by sending your technical questions related to the supported tools and services. The chatbot will provide real-time responses by fetching relevant information from the specified documentation sources.
 
 ## 🙋‍♂️ Sample Q&A
+![example](example_5.png)
 ![example](example_4.png)
 
 ## 🙋‍♂️ User Question Processing Workflow

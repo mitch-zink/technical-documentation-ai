@@ -4,18 +4,23 @@ from langchain.callbacks.base import BaseCallbackHandler
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.retrievers.web_research import WebResearchRetriever
 import os
+import streamlit as st
+from langchain.callbacks.base import BaseCallbackHandler
+from langchain.chains import RetrievalQAWithSourcesChain
+from langchain.retrievers.web_research import WebResearchRetriever
+import logging
+
+def setup_logging():
+    logging.basicConfig()
+    logging.getLogger("langchain.retrievers.web_research").setLevel(logging.INFO)
+
+setup_logging()
 
 # Configuring the Streamlit page appearance
 st.set_page_config(
     page_title="Technical Documentation AI Bot",
     page_icon="🧊",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        'Get Help': 'https://www.google.com/',
-        'Report a bug': "https://www.google.com/",
-        'About': "# This is a header. This is an *extremely* cool app!"
-    }
+    layout="wide"
 )
 
 def settings():
@@ -81,8 +86,20 @@ class PrintRetrievalHandler(BaseCallbackHandler):
             self.container.text(doc.page_content)
 
 # Displaying the main header and information about the application
-st.header("`Technical Documentation AI Chat Bot`")
-st.info("`I can answer technical questions in real time by checking documentation for AWS, GitHub, Fivetran, Looker, dbt, Prefect, & Snowflake.`")
+st.header("Technical Documentation AI Chat Bot")
+st.info("I can answer technical questions in real time by checking documentation for various tools and services.")
+
+# Displaying the list of supported documentation
+st.subheader("Supported Documentation")
+st.write("1. **AWS**: [docs.aws.amazon.com](https://docs.aws.amazon.com)")
+st.write("2. **dbt**: [dbt-labs.github.io/dbt-project-evaluator](https://dbt-labs.github.io/dbt-project-evaluator), [getdbt.com](https://getdbt.com)")
+st.write("3. **Fivetran**: [fivetran.com](https://fivetran.com)")
+st.write("4. **Looker**: [cloud.google.com/looker/docs](https://cloud.google.com/looker/docs)")
+st.write("5. **Prefect**: [docs.prefect.io](https://docs.prefect.io)")
+st.write("6. **Python (Langchain)**: [python.langchain.com/docs](https://python.langchain.com/docs)")
+st.write("7. **Snowflake**: [docs.snowflake.com](https://docs.snowflake.com)")
+st.write("8. **Streamlit**: [docs.streamlit.io](https://docs.streamlit.io)")
+
 
 # Initializing the retriever and language model if they haven't been initialized yet
 if 'retriever' not in st.session_state:
@@ -101,32 +118,32 @@ for message in st.session_state.messages:
 
 # Input field for the user to ask a question
 if question := st.chat_input("Ask a question:"):
-    # Storing the user's question and displaying it in the chat
-    st.session_state.messages.append({"role": "user", "content": question})
-    with st.chat_message("user"):
-        st.markdown(question)
+    try:
+        # Storing the user's question and displaying it in the chat
+        st.session_state.messages.append({"role": "user", "content": question})
+        with st.chat_message("user"):
+            st.markdown(question)
 
-    # Setting up logging to help in debugging and monitoring the application
-    import logging
-    logging.basicConfig()
-    logging.getLogger("langchain.retrievers.web_research").setLevel(logging.INFO)
+        # Initializing the QA chain with the language model and the web retriever
+        qa_chain = RetrievalQAWithSourcesChain.from_chain_type(llm, retriever=web_retriever)
 
-    # Initializing the QA chain with the language model and the web retriever
-    qa_chain = RetrievalQAWithSourcesChain.from_chain_type(llm, retriever=web_retriever)
+        # Setting up callback handlers to manage the display of retrieval results and the generated answer
+        retrieval_streamer_cb = PrintRetrievalHandler(st.container())
+        answer = st.empty()
+        stream_handler = StreamHandler(answer, initial_text="`Answer:`\n\n")
 
-    # Setting up callback handlers to manage the display of retrieval results and the generated answer
-    retrieval_streamer_cb = PrintRetrievalHandler(st.container())
-    answer = st.empty()
-    stream_handler = StreamHandler(answer, initial_text="`Answer:`\n\n")
+        # Executing the QA chain to generate and display the answer
+        result = qa_chain({"question": question}, callbacks=[retrieval_streamer_cb, stream_handler])
 
-    # Executing the QA chain to generate and display the answer
-    result = qa_chain({"question": question}, callbacks=[retrieval_streamer_cb, stream_handler])
+        # Storing the full response and displaying it in the chat
+        full_response = '`Answer:`\n\n' + result['answer']
+        st.session_state.messages.append({"role": "assistant", "content": full_response})
+        with st.chat_message("assistant"):
+            st.markdown(full_response)
 
-    # Storing the full response and displaying it in the chat
-    full_response = '`Answer:`\n\n' + result['answer']
-    st.session_state.messages.append({"role": "assistant", "content": full_response})
-    with st.chat_message("assistant"):
-        st.markdown(full_response)
-
-    # Displaying the sources of the information provided in the answer
-    st.info('`Sources:`\n\n' + result['sources'])
+        # Displaying the sources of the information provided in the answer
+        st.info('`Sources:`\n\n' + result['sources'])
+    
+    except Exception as e:
+        st.error("Sorry, an error occurred while processing your question. Please try again later.")
+        logging.error("Error processing question: %s", str(e))
