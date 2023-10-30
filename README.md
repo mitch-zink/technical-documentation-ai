@@ -12,7 +12,7 @@
   - [✨ Description](#description)
   - [📚 Supported Documentation](#supported-documentation)
   - [🤖 How to Use](#how-to-use)
-  - [🙋‍♂️ Sample Q&A](#sample-q-a)
+  - [💡 See the AI in Action](#see-the-ai-in-action)
   - [🙋‍♂️ User Question Processing Workflow](#user-question-processing-workflow)
   - [🔧 Configuration](#configuration)
     - [🛠️ API Key Configuration](#api-key-configuration)
@@ -35,13 +35,12 @@ A powerful AI chatbot capable of providing real-time answers to technical questi
 ## 🤖 How to Use <a name="how-to-use"></a>
 Interact with the chatbot by sending your technical questions related to the supported tools and services. The chatbot will provide real-time responses by fetching relevant information from the specified documentation sources.
 
-## 🙋‍♂️ Sample Q&A <a name="sample-q-a"></a>
-### Example 1:
-The startup screen for the chat bot
+### 💡 See the AI in Action <a name="see-the-ai-in-action"></a>
+### Startup Screen
 ![Example Interaction 1](example_5.png)
 
-### Example 2:
-Here's an example showcasing a typical interaction with the AI, where the user asks a question and receives a concise, up-to-date, and relevant response directly from the Snowflake documentation
+### Sample Interaction
+A typical dialogue with the AI, fetching a relevant response from Snowflake documentation.
 ![Example Interaction 2](example_4.png)
 
 
