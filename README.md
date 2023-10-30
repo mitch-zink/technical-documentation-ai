@@ -7,7 +7,7 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://technical-documentation-ai.streamlit.app/)
 
-# 🚀 Quick Navigation
+## 🚀 Quick Navigation
 - [📄 Technical Documentation AI](#technical-documentation-ai)
   - [✨ Description](#description)
   - [📚 Supported Documentation](#supported-documentation)
