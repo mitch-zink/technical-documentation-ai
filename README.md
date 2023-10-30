@@ -36,8 +36,14 @@ A powerful AI chatbot capable of providing real-time answers to technical questi
 Interact with the chatbot by sending your technical questions related to the supported tools and services. The chatbot will provide real-time responses by fetching relevant information from the specified documentation sources.
 
 ## 🙋‍♂️ Sample Q&A <a name="sample-q-a"></a>
-![example](example_5.png)
-![example](example_4.png)
+### Example 1:
+The startup screen for the chat bot
+![Example Interaction 1](example_5.png)
+
+### Example 2:
+Here's an example showcasing a typical interaction with the AI, where the user asks a question and receives a concise, up-to-date, and relevant response directly from the Snowflake documentation
+![Example Interaction 2](example_4.png)
+
 
 ## 🙋‍♂️ User Question Processing Workflow <a name="user-question-processing-workflow"></a>
 
@@ -77,7 +83,7 @@ os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
 - **`GOOGLE_API_KEY`**: Obtainable from [Google Cloud Console](https://console.cloud.google.com/apis/api/customsearch.googleapis.com/credentials).
   
 - **`GOOGLE_CSE_ID`**: Accessible at [Google Programmable Search Engine](https://programmablesearchengine.google.com/), requiring site configuration.
-  ![Configuration Example](example_2.png)
+  ![Configuration Example](example_6.png)
   
 - **`OPENAI_API_KEY`**: Retrieve from [OpenAI API Keys](https://beta.openai.com/account/api-keys).
 
