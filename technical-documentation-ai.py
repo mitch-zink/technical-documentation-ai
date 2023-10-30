@@ -6,7 +6,17 @@ from langchain.retrievers.web_research import WebResearchRetriever
 import os
 
 # Configuring the Streamlit page appearance
-st.set_page_config(page_title="Technical Documentation AI Bot", page_icon="🌐")
+st.set_page_config(
+    page_title="Technical Documentation AI Bot",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.google.com/',
+        'Report a bug': "https://www.google.com/",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    }
+)
 
 def settings():
     # Importing necessary modules for creating vector stores and embeddings
