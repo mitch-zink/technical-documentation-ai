@@ -7,6 +7,18 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://technical-documentation-ai.streamlit.app/)
 
+# Table of Contents
+1. [📄 Technical Documentation AI](#-technical-documentation-ai)
+   - [✨ Description](#-description)
+   - [📚 Supported Documentation](#-supported-documentation)
+   - [🤖 How to Use](#-how-to-use)
+   - [🙋‍♂️ Sample Q&A](#️-sample-qa)
+   - [🙋‍♂️ User Question Processing Workflow](#️-user-question-processing-workflow)
+   - [🔧 Configuration](#-configuration)
+     - [🛠️ API Key Configuration](#️-api-key-configuration)
+   - [👷 Setup & Run for MacOS](#-setup-run-for-macos)
+   - [👷‍♀️ Setup & Run for Windows](#️-setup-run-for-windows)
+
 ## ✨ Description
 A powerful AI chatbot capable of providing real-time answers to technical questions by accessing documentation from various tools and services.
 
