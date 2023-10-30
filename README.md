@@ -23,14 +23,15 @@
 A powerful AI chatbot capable of providing real-time answers to technical questions by accessing documentation from various tools and services.
 
 ## 📚 Supported Documentation <a name="supported-documentation"></a>
-1. **AWS**: [docs.aws.amazon.com](https://docs.aws.amazon.com)
-2. **dbt**: [dbt-labs.github.io/dbt-project-evaluator](https://dbt-labs.github.io/dbt-project-evaluator), [getdbt.com](https://getdbt.com)
-3. **Fivetran**: [fivetran.com](https://fivetran.com)
-4. **Looker**: [cloud.google.com/looker/docs](https://cloud.google.com/looker/docs)
-5. **Prefect**: [docs.prefect.io](https://docs.prefect.io)
-6. **Python (Langchain)**: [python.langchain.com/docs](https://python.langchain.com/docs)
-7. **Snowflake**: [docs.snowflake.com](https://docs.snowflake.com)
-8. **Streamlit**: [docs.streamlit.io](https://docs.streamlit.io)
+1. [**AWS Documentation**](https://docs.aws.amazon.com)
+2. [**dbt Documentation**](https://getdbt.com)
+3. [**dbt Project Evaluator**](https://dbt-labs.github.io/dbt-project-evaluator)
+4. [**Fivetran Documentation**](https://fivetran.com/docs)
+5. [**Looker Documentation**](https://cloud.google.com/looker/docs)
+6. [**Prefect Documentation**](https://docs.prefect.io)
+7. [**Python (Langchain) Documentation**](https://python.langchain.com/docs)
+8. [**Snowflake Documentation**](https://docs.snowflake.com)
+9. [**Streamlit Documentation**](https://docs.streamlit.io)
 
 ## 🤖 How to Use <a name="how-to-use"></a>
 Interact with the chatbot by sending your technical questions related to the supported tools and services. The chatbot will provide real-time responses by fetching relevant information from the specified documentation sources.

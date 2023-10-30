@@ -87,14 +87,22 @@ st.info("I can answer technical questions in real time by checking documentation
 
 # Displaying the list of supported documentation
 st.subheader("Supported Documentation")
-st.write("1. **AWS**: [docs.aws.amazon.com](https://docs.aws.amazon.com)")
-st.write("2. **dbt**: [dbt-labs.github.io/dbt-project-evaluator](https://dbt-labs.github.io/dbt-project-evaluator), [getdbt.com](https://getdbt.com)")
-st.write("3. **Fivetran**: [fivetran.com](https://fivetran.com)")
-st.write("4. **Looker**: [cloud.google.com/looker/docs](https://cloud.google.com/looker/docs)")
-st.write("5. **Prefect**: [docs.prefect.io](https://docs.prefect.io)")
-st.write("6. **Python (Langchain)**: [python.langchain.com/docs](https://python.langchain.com/docs)")
-st.write("7. **Snowflake**: [docs.snowflake.com](https://docs.snowflake.com)")
-st.write("8. **Streamlit**: [docs.streamlit.io](https://docs.streamlit.io)")
+
+documentation_links = """
+1. [**AWS Documentation**](https://docs.aws.amazon.com)
+2. [**dbt Documentation**](https://getdbt.com)
+3. [**dbt Project Evaluator**](https://dbt-labs.github.io/dbt-project-evaluator)
+4. [**Fivetran Documentation**](https://fivetran.com/docs)
+5. [**Looker Documentation**](https://cloud.google.com/looker/docs)
+6. [**Prefect Documentation**](https://docs.prefect.io)
+7. [**Python (Langchain) Documentation**](https://python.langchain.com/docs)
+8. [**Snowflake Documentation**](https://docs.snowflake.com)
+9. [**Streamlit Documentation**](https://docs.streamlit.io)
+"""
+
+st.markdown(documentation_links)
+
+
 
 
 # Initializing the retriever and language model if they haven't been initialized yet
@@ -111,7 +119,6 @@ if "messages" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-
 # Input field for the user to ask a question
 if question := st.chat_input("Ask a question:"):
     try:
@@ -120,16 +127,18 @@ if question := st.chat_input("Ask a question:"):
         with st.chat_message("user"):
             st.markdown(question)
 
-        # Initializing the QA chain with the language model and the web retriever
-        qa_chain = RetrievalQAWithSourcesChain.from_chain_type(llm, retriever=web_retriever)
+        # Display loading wheel while processing the question
+        with st.spinner("Processing your question..."):
+            # Initializing the QA chain with the language model and the web retriever
+            qa_chain = RetrievalQAWithSourcesChain.from_chain_type(llm, retriever=web_retriever)
 
-        # Setting up callback handlers to manage the display of retrieval results and the generated answer
-        retrieval_streamer_cb = PrintRetrievalHandler(st.container())
-        answer = st.empty()
-        stream_handler = StreamHandler(answer, initial_text="`Answer:`\n\n")
+            # Setting up callback handlers to manage the display of retrieval results and the generated answer
+            retrieval_streamer_cb = PrintRetrievalHandler(st.container())
+            answer = st.empty()
+            stream_handler = StreamHandler(answer, initial_text="`Answer:`\n\n")
 
-        # Executing the QA chain to generate and display the answer
-        result = qa_chain({"question": question}, callbacks=[retrieval_streamer_cb, stream_handler])
+            # Executing the QA chain to generate and display the answer
+            result = qa_chain({"question": question}, callbacks=[retrieval_streamer_cb, stream_handler])
 
         # Storing the full response and displaying it in the chat
         full_response = '`Answer:`\n\n' + result['answer']
