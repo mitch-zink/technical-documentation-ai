@@ -57,4 +57,3 @@ python3.9 -m venv venv && .\venv\Scripts\activate && python -m pip install --upg
 
 ## Sample Q&A
 ![example](example.png)
-

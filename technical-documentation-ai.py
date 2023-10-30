@@ -5,10 +5,10 @@ from langchain.retrievers.web_research import WebResearchRetriever
 
 import os
 
-os.environ["GOOGLE_API_KEY"] = "YOUR_GOOGLE_API_KEY" # Get it at https://console.cloud.google.com/apis/api/customsearch.googleapis.com/credentials
-os.environ["GOOGLE_CSE_ID"] = "YOUR_GOOGLE_CSE_ID" # Get it at https://programmablesearchengine.google.com/
-os.environ["OPENAI_API_BASE"] = "https://api.openai.com/v1"
-os.environ["OPENAI_API_KEY"] = "YOUR_OPENAI_API_KEY" # Get it at https://beta.openai.com/account/api-keys
+# os.environ["GOOGLE_API_KEY"] = "YOUR_GOOGLE_API_KEY" # Get it at https://console.cloud.google.com/apis/api/customsearch.googleapis.com/credentials
+#os.environ["GOOGLE_CSE_ID"] = "YOUR_GOOGLE_CSE_ID" # Get it at https://programmablesearchengine.google.com/
+# os.environ["OPENAI_API_BASE"] = "https://api.openai.com/v1"
+# os.environ["OPENAI_API_KEY"] = "YOUR_OPENAI_API_KEY" # Get it at https://beta.openai.com/account/api-keys
 
 st.set_page_config(page_title="Technical Documentation AI Bot", page_icon="🌐")
 
