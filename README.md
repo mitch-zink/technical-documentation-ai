@@ -11,7 +11,7 @@
 The AI chatbot can answer technical questions in real time by checking documentation for AWS, GitHub, Fivetran, Looker, dbt, Prefect, & Snowflake.
 
 ## 🙋‍♂️ Sample Q&A
-![example](example.png)
+![example](example_3.png)
 
 ## 🙋‍♂️ User Question Processing Workflow
 
