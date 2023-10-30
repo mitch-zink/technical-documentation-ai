@@ -38,7 +38,7 @@ Interact with the chatbot by sending your technical questions related to the sup
 
 ### 💡 See the AI in Action <a name="see-the-ai-in-action"></a>
 ### Startup Screen
-![Example Interaction 1](example_5.png)
+![Example Interaction 1](example_7.png)
 
 ### Sample Interaction
 A typical dialogue with the AI, fetching a relevant response from Snowflake documentation.
