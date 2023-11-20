@@ -1,4 +1,4 @@
-streamlit==1.25.0
+streamlit==1.28.2
 langchain==0.0.244
 chromadb==0.4.3
 openai==0.27.8
