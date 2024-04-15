@@ -94,5 +94,5 @@ python3.9 -m venv venv && source venv/bin/activate && pip3 install --upgrade pip
 
 ## 👷‍♀️ Setup & Run for Windows <a name="setup-run-for-windows"></a>
 ```
-python3.9 -m venv venv && .\venv\Scripts\activate && python -m pip install --upgrade pip && pip install -r requirements.txt && streamlit run technical-documentation-ai.py
+py -m venv venv; .\venv\Scripts\Activate.ps1; python -m pip install --upgrade pip; pip install -r requirements.txt; streamlit run app.py
 ```
