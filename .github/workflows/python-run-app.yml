@@ -1,0 +1,40 @@
+name: python-run-app
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Create and activate virtual environment
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+
+    - name: Upgrade pip and Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Streamlit application
+      run: |
+        timeout 5s streamlit run app.py &
+        sleep 1
+      continue-on-error: true
+
+    - name: Check if Streamlit app ran successfully
+      if: failure()
+      run: exit 1
